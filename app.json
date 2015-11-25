@@ -1,0 +1,6 @@
+{
+  "name": "My First Heroku Docker app",
+  "description": "An example app.json for heroku-docker",
+  "image": "heroku/ruby",
+  "addons": []
+}
