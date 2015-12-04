@@ -34,10 +34,9 @@ module API
       "YES!"
     end
 
-    def success_response(message: nil, data: nil, links: nil)
+    def success_response(data, links = nil)
       body = {
           status: 'success',
-          message: message,
           data: data
       }
       body.merge!({links: links}) unless links.nil?
@@ -46,10 +45,9 @@ module API
       halt json body
     end
 
-    def failure_response(message: nil, data: nil)
+    def failure_response(data = nil)
       body = {
           status: 'failure',
-          message: message,
           data: data
       }
 
@@ -57,7 +55,7 @@ module API
       halt json body
     end
 
-    def error_response(status_code, message: nil, data: nil)
+    def error_response(status_code, message = nil, data = nil)
       body = {
           status: 'error',
           message: message
@@ -68,7 +66,7 @@ module API
       halt json body
     end
 
-    get '/' do
+    get '/?' do
       logger.warn "somebody try accessing api root from : #{request.ip}"
       error_response(400, "Bad Request")
     end

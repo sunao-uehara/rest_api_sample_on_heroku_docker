@@ -1,6 +1,6 @@
 web:
   build: .
-  command: 'bash -c ''bundle exec rackup config.ru'''
+  command: 'bash -c ''rackup config.ru'''
   working_dir: /app/user
   environment:
     PORT: 8080

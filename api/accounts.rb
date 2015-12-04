@@ -3,7 +3,7 @@ require_relative 'base'
 module API
   class Account < Base
 
-    BASE_PATH = '/account'
+    BASE_PATH = '/accounts'
 
     namespace BASE_PATH do
 
@@ -15,26 +15,38 @@ module API
 
       # register
       post '/?' do
+        res = {:msg => "new account created"}
+        success_response(res)
       end
 
       # login
       post '/login' do
+        res = {:msg => "login successful"}
+        success_response(res)
       end
 
       # logout
       delete '/login' do
+        res = {:msg => "logout.."}
+        success_response(res)
       end
 
       # add nickname
       put '/nickname' do
+        res = {:msg => "nickname created"}
+        success_response(res)
       end
 
       # change password
       put '/password' do
+        res = {:msg => "passwd has been changed"}
+        success_response(res)
       end
 
       # delete account
       delete '/' do
+        res = {:msg => "account deleted"}
+        success_response(res)
       end
 
     end
